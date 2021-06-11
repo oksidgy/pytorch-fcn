@@ -98,9 +98,14 @@ def main():
         torchfcn.datasets.SBDClassSeg(root, split='train', transform=True),
         batch_size=1, shuffle=True, **kwargs)
     val_loader = torch.utils.data.DataLoader(
+        torchfcn.datasets.SBDClassSeg(root, split='val', transform=True),
+        batch_size=1, shuffle=True, **kwargs)
+    '''
+    val_loader = torch.utils.data.DataLoader(
         torchfcn.datasets.VOC2011ClassSeg(
             root, split='seg11valid', transform=True),
         batch_size=1, shuffle=False, **kwargs)
+        '''
 
     # 2. model
 
